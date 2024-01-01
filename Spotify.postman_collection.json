@@ -9,7 +9,7 @@
 		{
 			"name": "Spotify Auth key",
 			"request": {
-				"auth": {
+				"auth": { 
 					"type": "basic",
 					"basic": [
 						{
