@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "8ad234ff-0e08-4649-88c6-3c5dd66a5a12",
+		"name": "Spotify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31057559"
+	},
+	"item": [
+		{
+			"name": "Spotify Auth key",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{spotify_client_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "35dc7b0d765c43a9b1da4d356699d0bb",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://accounts.spotify.com/api/token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Spotify Auth Key - Manual",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic MzVkYzdiMGQ3NjVjNDNhOWIxZGE0ZDM1NjY5OWQwYmI6NGYzZjg3NzUxNjgyNDg1YWI2NTMwNDI2NTI1N2Q4YTE=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://accounts.spotify.com/api/token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Album",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQDPG-iD9EMwf1WYSYLkSFAMIwICabgwanDHXyqQydQg7DpXre90Thi7BhcdfIn1s9inH38KQAvd6QmHECwh06vkig5uUd83RFAtmr6jqjJfTedVAog",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"albums",
+						"4aawyAB9vmqN3uQ7FjRGTy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Albums",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQBa1Ye0Uy7jpdZ77V6VTwkN3Z7lxcnE_sRsMks_OY4qzS4lSsXBP7t94eUiO_NoiR0uEKPQ-dIzlhJsSziYuARNNaaGFpD3YbOPAKq-_XPR9US5Gac",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/albums/?ids=382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"albums",
+						""
+					],
+					"query": [
+						{
+							"key": "ids",
+							"value": "382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Album Track ",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQBa1Ye0Uy7jpdZ77V6VTwkN3Z7lxcnE_sRsMks_OY4qzS4lSsXBP7t94eUiO_NoiR0uEKPQ-dIzlhJsSziYuARNNaaGFpD3YbOPAKq-_XPR9US5Gac",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy/tracks?market=es",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"albums",
+						"4aawyAB9vmqN3uQ7FjRGTy",
+						"tracks"
+					],
+					"query": [
+						{
+							"key": "market",
+							"value": "es"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Saved Albums",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQDYeDVaPmseekdhDPX9ymNr5R47o2Glrla4laCgWr7kojUKjyfW4HLkZw2mfdvMYC_ko5Xz7ErpwCZ8GF_6MBRZ9TrgqYBdpy4D1EQVnflbn1-acd8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/me/albums?limit=10&offset=5&market=es",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"me",
+						"albums"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "5"
+						},
+						{
+							"key": "market",
+							"value": "es"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get playlist - from ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQCfxmn7vr0HM2HTR1vDJA95LDx5SDSGoOkp6g97wIkzb2cYvknFI-Vnc_cdqtVVdv8fg4cpVi6UpBLmqG4QFCuI87CeGIv74Rm0qmYbs_D-4uZIYGM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/playlists/3cEYpjA9oz9GiPac4AsH4n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"playlists",
+						"3cEYpjA9oz9GiPac4AsH4n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users Playlists",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQAeX5MZx0pOFW0wiz512_vgYsF_Gt6ly6ndDOlGH_rJ9XZGLqeCluX1wcQe8-CATy9IuGoE0kms08mqm_1uQuDp6kyC6RqQd90gK0HJ_xkouTzckcQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/users/a8czsd05wwo43i5klgjzwsb9r/playlists?limit=3",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"users",
+						"a8czsd05wwo43i5klgjzwsb9r",
+						"playlists"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User ID - verifica",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQAeX5MZx0pOFW0wiz512_vgYsF_Gt6ly6ndDOlGH_rJ9XZGLqeCluX1wcQe8-CATy9IuGoE0kms08mqm_1uQuDp6kyC6RqQd90gK0HJ_xkouTzckcQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/me",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post User Playlist - verifica",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQCFgtxjGgBdNQbe-V23LjKJyfzGPF3y0UnJctR-1dwVLFXaxMmAQMxuM8apFKGKgac9llLAdfF0guh1cob_0KtfPpx7sXkPkSy0qUtxEjMkeTGn_Kg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"New Playlist\",\r\n    \"description\": \"New playlist description\",\r\n    \"public\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.spotify.com/v1/users/:user_id/playlists",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"users",
+						":user_id",
+						"playlists"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": "a8czsd05wwo43i5klgjzwsb9r"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
